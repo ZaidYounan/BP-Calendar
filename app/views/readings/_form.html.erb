@@ -1,0 +1,32 @@
+<%= form_with(model: reading) do |form| %>
+  <% if reading.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reading.errors.count, "error") %> prohibited this reading from being saved:</h2>
+
+      <ul>
+        <% reading.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :systolic %>
+    <%= form.number_field :systolic %>
+  </div>
+
+  <div class="field">
+    <%= form.label :diastolic %>
+    <%= form.number_field :diastolic %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
