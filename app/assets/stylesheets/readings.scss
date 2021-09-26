@@ -4,6 +4,9 @@
 
 html, body {
     font-family: 'Courier New', Courier, Helvetica;
+    height:100vh !important;
+    width: 100vw !important;
+    margin:2% !important;
 }
 
 .index-container {
@@ -11,11 +14,12 @@ html, body {
     flex-direction:column;
     justify-content:center;
     align-items:center space-evenly;
+    overflow:scroll;
 }
 
 .btn-z {
     color: #fff !important;
-    width: 30%;
+    width: 35%;
 }
 
 .btn-destroy {
@@ -30,7 +34,9 @@ html, body {
 }
 
 img {
-    margin:2%;
-    margin-top:5%;  
+    margin:1.5%;
+    margin-top:5%;
+    min-width:85%;
+    max-width:90%;  
 }
 
