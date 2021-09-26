@@ -22,7 +22,7 @@
           <td><%= reading.created_at.strftime('%H:%M %A %d/%m/%y') %></td>
           <td><%= link_to 'Show', reading, class: "btn btn-outline-primary" %></td>
           <td><%= link_to 'Edit', edit_reading_path(reading), class: "btn btn-outline-primary" %></td>
-          <td><%= link_to 'Destroy', reading, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-primary btn-destroy" %></td>
+          <td><%= link_to 'DELETE', reading, method: :delete, data: { confirm: 'Are you sure you want to delete this entry?' }, class: "btn btn-outline-primary btn-destroy" %></td>
         </tr>
       <% end %>
     </tbody>
