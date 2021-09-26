@@ -1,31 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="index-container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Readings</h1>
+  <h1>Readings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Systolic</th>
-      <th>Diastolic</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @readings.each do |reading| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= reading.name %></td>
-        <td><%= reading.systolic %></td>
-        <td><%= reading.diastolic %></td>
-        <td><%= link_to 'Show', reading %></td>
-        <td><%= link_to 'Edit', edit_reading_path(reading) %></td>
-        <td><%= link_to 'Destroy', reading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Systolic</th>
+        <th>Diastolic</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @readings.each do |reading| %>
+        <tr>
+          <td><%= reading.name %></td>
+          <td><%= reading.systolic %></td>
+          <td><%= reading.diastolic %></td>
+          <td><%= reading.created_at.strftime('%H:%M %A %d/%m/%y') %></td>
+          <td><%= link_to 'Show', reading, class: "btn btn-outline-primary" %></td>
+          <td><%= link_to 'Edit', edit_reading_path(reading), class: "btn btn-outline-primary" %></td>
+          <td><%= link_to 'Destroy', reading, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-primary btn-destroy" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Reading', new_reading_path %>
+  <br>
+
+  <%= link_to 'New Reading', new_reading_path, class: "btn btn-primary btn-lg btn-z" %>
+
+  <%= image_tag "bp-chart.jpeg" %>
+</div>
